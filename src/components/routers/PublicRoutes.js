@@ -4,5 +4,6 @@ import { AuthContext } from "../../auth/authContext";
 
 export const PublicRoutes = ({ children }) => {
   const { user } = useContext(AuthContext);
+
   return !user.logged ? children : <Navigate to="/Marvel" />;
 };

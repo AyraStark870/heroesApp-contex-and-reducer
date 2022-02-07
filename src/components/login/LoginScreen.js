@@ -13,7 +13,10 @@ export const LoginScreen = () => {
   const handleLogin = () => {
     const action = { type: types.login, payload: { name: "Clau" } };
     dispatch(action);
-    navigate("/", { replace: true });
+
+    const lastPath = localStorage.getItem("lastPath") || "/marvel";
+
+    navigate(lastPath, { replace: true });
   };
 
   return (
